@@ -2,6 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 export const initState = {
     isLogged: false,
+    modalWindow: 'None',
     userName:'',
     posts: [],
     page: 1,
@@ -27,13 +28,16 @@ const slice = createSlice({
         setSearch: (state, {payload}) => {
             state.search = payload;
         },
+        setModalWindow: (state, {payload})  => {
+            state.modalWindow= payload;
+        }
     }       
 });
 
 export default slice.reducer;
 
 export const {
-   initApp, changeUserName, changeIsLogged,setPosts, setPage, setSearch
+   initApp, changeUserName, changeIsLogged,setPosts, setPage, setSearch, setModalWindow
 } = slice.actions;
 
 export const appSelector = state => state.app

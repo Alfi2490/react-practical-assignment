@@ -2,11 +2,17 @@ import { useSelector, useDispatch } from "react-redux";
 import { appSelector, setPosts} from "../../../redux/appReducer";
 import './MainPageGalleryOfPosts.css';
 import deletePost from "../../../api/apiDeletePost";
+import { useEffect } from "react";
+import getPostByPages from "../../../api/apiGetPostByPages";
 
 export default function MainPageGalleryOfPosts() {
 
-    const {posts, userName} = useSelector(appSelector);
+    const {posts, userName, page} = useSelector(appSelector);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        getPostByPages(page).then(res => dispatch(setPosts(res.result)));
+    },[posts, dispatch, page] ) 
 
     function likeClickHandler(id){
         let tmp = [...posts];

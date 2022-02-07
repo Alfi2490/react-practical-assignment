@@ -1,10 +1,20 @@
+.Shadow{
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(1, 1, 1, 0.8);
+    position: absolute;
+}
+
 .CreatePostModal{
     width: 500px;
     position: fixed;
-    top: 40px;
-    left: 15%;
+    top: 250px;
+    left: 20%;
     background-color: blue;
     padding: 15px;
+    border-radius: 20px;
 }
 .CreatePostModalForm {
     display: flex;
