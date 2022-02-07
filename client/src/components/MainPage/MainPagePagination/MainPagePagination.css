@@ -1,0 +1,12 @@
+.MainPagePagination{
+    display:flex;
+    justify-content: space-around;
+}
+
+.MainPagePagination div:hover{
+    cursor: pointer;
+}
+
+.Active{
+    color: greenyellow;
+}

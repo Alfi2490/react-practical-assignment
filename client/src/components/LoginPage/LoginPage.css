@@ -1,0 +1,13 @@
+.LoginPage {
+    width: 20%;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.LoginPage h3 {
+    font-size: small;
+    position: fixed;
+    top: 70px;
+    color: red;
+}

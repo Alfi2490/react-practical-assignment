@@ -1,0 +1,13 @@
+.CreatePostModal{
+    width: 500px;
+    position: fixed;
+    top: 40px;
+    left: 15%;
+    background-color: blue;
+    padding: 15px;
+}
+.CreatePostModalForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
