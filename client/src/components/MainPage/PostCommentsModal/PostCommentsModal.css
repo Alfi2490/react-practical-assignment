@@ -1,0 +1,12 @@
+.PostCommentsModal{
+    width: 33.3%;
+    position: fixed;
+    top: 250px;
+    left: 33.3%;
+    background-color: red;
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

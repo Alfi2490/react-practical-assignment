@@ -5,6 +5,7 @@ const MAIN_URL = 'http://localhost:8080/';
 // response: { id: , title: , username: likes: <Array> //usernames dislikes: <Array> //usernames imageSrc: //path date: , comments: <Array> }
 
 async function createPost(title, username) {
+    
     const URL = MAIN_URL + 'post/';
 
     const data = {title, username};

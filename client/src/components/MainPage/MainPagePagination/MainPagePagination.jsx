@@ -4,12 +4,23 @@ import './MainPagePagination.css';
 
 export default function MainPagePagination() {
 
-    const {page} = useSelector(appSelector);
+    const {page, totalPages} = useSelector(appSelector);
     const dispatch = useDispatch();
 
+    let displayPages = [];
+    let active = null;
+
+    for(let i = 0; i < totalPages; i++) {
+        if(page === i + 1) {
+            active = 'Active'
+        } else {
+            active = null;
+        };
+        displayPages.push(<div key={i} className={active} onClick={() => dispatch(setPage(i + 1))}>{i + 1}</div>)
+    }
+
+
     return <div className="MainPagePagination">
-        <div className={page === 1 ? "Active" : null} onClick={() => dispatch(setPage(1))}>1</div>
-        <div className={page === 2 ? "Active" : null} onClick={() => dispatch(setPage(2))}>2</div>
-        <div className={page === 3 ? "Active" : null} onClick={() => dispatch(setPage(3))}>3</div>
+        {displayPages}
     </div>
 }

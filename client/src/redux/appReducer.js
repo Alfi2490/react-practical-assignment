@@ -6,6 +6,7 @@ export const initState = {
     userName:'',
     posts: [],
     page: 1,
+    totalPages: '',
     search: '',
 };
 
@@ -28,8 +29,11 @@ const slice = createSlice({
         setSearch: (state, {payload}) => {
             state.search = payload;
         },
-        setModalWindow: (state, {payload})  => {
-            state.modalWindow= payload;
+        setModalWindow: (state, {payload}) => {
+            state.modalWindow = payload;
+        },
+        setTotalPages: (state, {payload}) => {
+            state.totalPages = payload;
         }
     }       
 });
@@ -37,7 +41,7 @@ const slice = createSlice({
 export default slice.reducer;
 
 export const {
-   initApp, changeUserName, changeIsLogged,setPosts, setPage, setSearch, setModalWindow
+   initApp, changeUserName, changeIsLogged,setPosts, setPage, setSearch, setModalWindow, setTotalPages
 } = slice.actions;
 
 export const appSelector = state => state.app

@@ -1,6 +1,6 @@
 import './MainPageHeader.css';
 import { useSelector, useDispatch } from "react-redux";
-import { appSelector, changeUserName, changeIsLogged, setModalWindow } from "../../../redux/appReducer"; 
+import { appSelector, changeUserName, changeIsLogged, setModalWindow, setPage } from "../../../redux/appReducer"; 
 
 export default function MainPageHeader() {
 
@@ -11,6 +11,7 @@ export default function MainPageHeader() {
         <h1 onClick={() => dispatch(setModalWindow('CreatePostModal')) }>{userName}</h1><button onClick={() => {
             dispatch(changeUserName(''));
             dispatch(changeIsLogged());
+            dispatch(setPage(1));
         }}>Log Out</button>
     </div>
 }

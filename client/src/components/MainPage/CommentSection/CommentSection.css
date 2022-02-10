@@ -1,0 +1,16 @@
+.CommentsSection{
+    position: absolute;
+    top: 25%;
+    left: 2.5%;
+    width: 95%;
+    height: 72%;
+    background-color: aqua;
+    border-radius: 20px;   
+}
+
+.CommentsList{
+    height: 70%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 15px;
+}

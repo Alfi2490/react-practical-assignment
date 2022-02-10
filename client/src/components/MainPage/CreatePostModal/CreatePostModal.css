@@ -4,14 +4,14 @@
     top: 0;
     left: 0;
     background-color: rgba(1, 1, 1, 0.8);
-    position: absolute;
+    position: fixed;
 }
 
 .CreatePostModal{
-    width: 500px;
+    width: 33.3%;
     position: fixed;
     top: 250px;
-    left: 20%;
+    left: 33.3%;
     background-color: blue;
     padding: 15px;
     border-radius: 20px;

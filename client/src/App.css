@@ -3,3 +3,12 @@
     margin: 0 auto;
     position: relative;
 }
+
+button {
+
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}

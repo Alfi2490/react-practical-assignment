@@ -1,0 +1,26 @@
+.Post{
+    border:1px solid black;
+    flex-basis: 30%;
+    margin-bottom: 20px;
+    padding:10px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.LikeGroupe{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.ButtonsGroupe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.AddCommentButton{
+    font-size: 0.5rem;
+}

@@ -10,21 +10,17 @@ async function uploadPostPicture(id, picture) {
 
     const URL = MAIN_URL + `post/${id}/picture`;
 
-    const data = new FormData();
-    data.append("picture", picture);
+    let formData = new FormData();
+    formData.append('picture', picture);
 
     const response = await fetch(URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'multipart/form-data',
-        },
-        body: data,  
+        method: 'post',
+        body: formData,
     });
 
     const res = await response.json();
 
-    console.log(res);
-
+    return res;
 };
 
 export default uploadPostPicture;
