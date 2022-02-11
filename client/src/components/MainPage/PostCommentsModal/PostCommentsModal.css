@@ -3,10 +3,21 @@
     position: fixed;
     top: 250px;
     left: 33.3%;
-    background-color: red;
+    background-color: rgb(75, 114, 245);
     padding: 15px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 1px 4px 15px 2px rgba(0,0,0,0.73);
+}
+
+.PostCommentsModal h4{
+    color: white;
+}
+
+.PostCommentsModal input{
+    height: 26px;
+    padding: 8px;
+    outline: none;
 }

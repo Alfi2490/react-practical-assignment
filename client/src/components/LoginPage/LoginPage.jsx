@@ -11,8 +11,8 @@ export default function LoginPage() {
     const [error, setError] = useState('');
 
     return <div className='LoginPage'>
-        <input type="text" value={userName} onChange={e => dispatch(changeUserName(e.target.value.trim()))}/>
-        <button onClick={() => {
+        <input className="LoginPageInput" type="text" value={userName} onChange={e => dispatch(changeUserName(e.target.value.trim()))}/>
+        <button className="LoginPageButton" onClick={() => {
             if(userName === '') {
                 setError('Enter User Name!');
                 return
@@ -20,6 +20,6 @@ export default function LoginPage() {
             dispatch(changeIsLogged());
         }
             }>Login</button>
-        {error && <h3>{error}</h3>}
+        {error && <h3 className='LoginPageWarning'>{error}</h3>}
     </div>
 }

@@ -2,6 +2,9 @@
     display:flex;
     justify-content: space-around;
     margin-bottom: 30px;
+    color: rgb(3, 3, 163);
+    border-top: 2px solid rgb(3, 3, 163);
+    padding-top: 10px;
 }
 
 .MainPagePagination div:hover{

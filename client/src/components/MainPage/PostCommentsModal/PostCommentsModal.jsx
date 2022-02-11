@@ -33,6 +33,7 @@ export default function PostCommentsModal() {
 
   return <div className='Shadow'>
     <div className="PostCommentsModal">
+        <h4>Add Comment</h4>
         <input type="text" name="comment" id="comment" value={comment} onChange={e => dispatch(setComment(e.target.value))}/>
         <button onClick={() => {
           if(commentMode === 'Add') addCommentAction();

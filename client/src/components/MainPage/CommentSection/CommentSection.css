@@ -3,14 +3,26 @@
     top: 25%;
     left: 2.5%;
     width: 95%;
-    height: 72%;
-    background-color: aqua;
-    border-radius: 20px;   
+    height: 74.7%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 4px 15px 2px rgba(0,0,0,0.73);
+}
+
+.CommentSectionCloseButton{
+    margin: 10px 0 2px 30px;
+    background-color: white;
 }
 
 .CommentsList{
-    height: 70%;
+    border-top: 2px solid rgb(3, 3, 163);
+    height: 85.5%;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 15px;
+}
+
+.CommentsList::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }

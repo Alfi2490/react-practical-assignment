@@ -57,10 +57,10 @@ export default function Post(props) {
 
     return <div className="Post">
 
-        <h1>{post.title}</h1>
-        <img src={post.imageSrc} alt="post" /> 
-        <p>{dateFinal}</p>
-        <h2>{post.username}</h2>
+        <h1 className="PostTitle">{post.title}</h1>
+        <img className="PostImage" src={post.imageSrc} alt="post" /> 
+        <p className="PostDate">{dateFinal}</p>
+        <h2 className="PostUserName">{post.username}</h2>
 
         <div className="LikeGroupe">
             <button onClick={() => likePostAction(post.id)}>Like</button>
@@ -69,7 +69,6 @@ export default function Post(props) {
         </div>
 
         <div className="ButtonsGroupe">
-
             <button 
                 className="AddCommentButton" 
                 onClick={() => {
@@ -83,7 +82,6 @@ export default function Post(props) {
                 <button className="DeleteButton" onClick={() => deletePostAction(post.id)}>Delete</button>
                 <button onClick={() => editPostAction()}>Edit post</button>
             </>}
-
         </div>
 
         <CommentSection 

@@ -8,7 +8,8 @@ export default function MainPageHeader() {
     const dispatch = useDispatch(changeUserName());
 
     return <div className="MainPageHeader">
-        <h1 onClick={() => dispatch(setModalWindow('CreatePostModal')) }>{userName}</h1><button onClick={() => {
+        <h1 className='MainPageHeaderUser' onClick={() => dispatch(setModalWindow('CreatePostModal')) }>{userName}</h1>
+        <button className='MainPageHeaderButton' onClick={() => {
             dispatch(changeUserName(''));
             dispatch(changeIsLogged());
             dispatch(setPage(1));

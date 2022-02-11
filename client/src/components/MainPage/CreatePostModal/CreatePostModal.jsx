@@ -14,31 +14,38 @@ export default function CreatePostModal() {
   const dispatch = useDispatch();
 
   async function onSubmitHandler(event) {
-
     event.preventDefault();
-
     let file = document.getElementById('picture').files[0];
-
-    await createPost(title, userName)
-    .then(res => dispatch(setId(res)))
-    .then(() => {
-      if(file !== undefined) uploadPostPicture(id, file);
-    })
-    .then(() => {
-      getPostByPages(page)
-    .then(res => {
+    await createPost(title, userName).then(res => {
+      setId(res);
+      if(file !== undefined) uploadPostPicture(res, file).then(() => 
+      {
+        getPostByPages(page).then(res => {
+          dispatch(setTotalPages(res.totalPages));
+          dispatch(setPosts(res.result));
+        }); 
+      }); 
+    }); 
+    getPostByPages(page).then(res => {
       dispatch(setTotalPages(res.totalPages));
       dispatch(setPosts(res.result));
-    });    
-
+    });  
     dispatch(setModalWindow('None'));
-    dispatch(setTitle(''));  
-    });          
+    dispatch(setTitle(''));           
   }
 
-  function onSubmitHadlerEdit(event) {
+  async function onSubmitHadlerEdit(event) {
     event.preventDefault();
-    updatePost(id, title, postLikes, postDislikes);
+    let file = document.getElementById('picture').files[0];
+    await updatePost(id, title, postLikes, postDislikes).then(() => {
+      if(file !== undefined) uploadPostPicture(id, file).then(() => 
+      {
+        getPostByPages(page).then(res => {
+          dispatch(setTotalPages(res.totalPages));
+          dispatch(setPosts(res.result));
+        }); 
+      }); 
+    }); 
     getPostByPages(page).then(res => {
       dispatch(setTotalPages(res.totalPages));
       dispatch(setPosts(res.result));
@@ -55,8 +62,9 @@ export default function CreatePostModal() {
         if(mode === 'Edit') onSubmitHadlerEdit(e)
       }}
         className='CreatePostModalForm'>
-          <input type="text" name="title" value={title} onChange={e => dispatch(setTitle(e.target.value))}/>
-          <input type="file" name="pictute" id="picture"/>
+          <h4 className='Window'>Create Post</h4>
+          <input className='FormInput' type="text" name="title" value={title} onChange={e => dispatch(setTitle(e.target.value))}/>
+          <input className='FormFileInput' type="file" name="pictute" id="picture"/>
           <div className='buttonGroupe'>
             <button type='submit' >{mode === 'Edit' ? 'Edit' : 'Add'}</button>
             <button onClick={() => {

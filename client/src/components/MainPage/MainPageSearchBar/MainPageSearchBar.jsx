@@ -33,7 +33,7 @@ export default function MainPageSearchBar() {
     }
 
     return <div className="MainPageSearchBar">
-        <input type="text" value={search} onChange={e => dispatch(setSearch(e.target.value))} onKeyPress={(e) => handleEnterPress(e)}/>
+        <input className='MainPageSearchBarInput' type="text" value={search} onChange={e => dispatch(setSearch(e.target.value))} onKeyPress={(e) => handleEnterPress(e)}/>
         <p>{noResult}</p>
     </div>
 }

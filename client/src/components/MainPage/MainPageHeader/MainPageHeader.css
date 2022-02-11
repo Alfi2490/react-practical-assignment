@@ -1,11 +1,24 @@
 .MainPageHeader{
+    color: white;
     padding: 0 100px;
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(3, 3, 163);
 }
 
-.MainPageHeader button{
+.MainPageHeaderUser:hover {
+    cursor: pointer;
+    color: rgb(215, 227, 250);
+}
+
+.MainPageHeaderButton{
     height: 30px;
+    border: none;
+    background-color: white;
+    color: rgb(3, 3, 163);
+}
+.MainPageHeaderButton:hover{
+    background-color: rgb(215, 227, 250);
 }

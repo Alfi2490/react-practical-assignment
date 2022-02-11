@@ -5,9 +5,26 @@
     justify-content: space-between;
 }
 
-.LoginPage h3 {
+.LoginPageWarning{
     font-size: small;
     position: fixed;
     top: 70px;
     color: red;
 }
+.LoginPageInput{
+    height: 26px;
+    padding: 10px;
+    border: 2px solid rgb(3, 3, 163);
+    margin-right: 10px;
+    outline: none;
+}
+.LoginPageButton{
+    color: white;
+    background-color: rgb(3, 3, 163);
+    border: none;
+    width: 70px;
+}
+.LoginPageButton:hover{
+    background-color: rgb(7, 7, 207);
+}
+

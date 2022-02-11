@@ -4,7 +4,7 @@ import deleteComment from "../../../api/apiDeleteComment";
 import getPostByPages from "../../../api/apiGetPostByPages";
 import updateComment from "../../../api/apiUpdateComment";
 import {setComment, setCommentId, setCommentLikes, setCoommentDislikes, setCommentMode} from '../../../redux/postCommentsModalReducer';
-
+import './Comment.css';
 
 export default function Comment(props) {
 
@@ -44,19 +44,18 @@ export default function Comment(props) {
         dispatch(setModalWindow('PostCommentsModal'));
     }
 
-    return <div>
-        <p>{comment.text}</p>
-        <p>{commentDate}</p>
-        <div>
-            {comment.username === userName ? <>
-                <button onClick={() => editCommentAction()}>Edit</button>
-                <button onClick={() => deleteCommentAction(comment.id)}>Delete</button>
-            </> : <>
+    return <div className="Comment">
+        <p className="CommentText">{comment.text}</p>
+        <p className="CommentDate">{commentDate}</p>
+        <div className="CommentButtons">            
+
                 <button onClick={() => likeCommentAction(comment.id)}>Like</button>
                 <p>{comment.likes.length - comment.dislikes.length}</p>
                 <button onClick={() => dislikeCommentAction(comment.id)}>Dislike</button>
-            </>}
-            
-        </div>
+
+            {comment.username === userName && <>
+                <button onClick={() => editCommentAction()}>Edit</button>
+                <button onClick={() => deleteCommentAction(comment.id)}>Delete</button>      </>}
+            </div>
     </div>
 }
