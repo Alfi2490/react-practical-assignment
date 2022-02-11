@@ -46,7 +46,7 @@ export default function Comment(props) {
 
     return <div className="Comment">
         <p className="CommentText">{comment.text}</p>
-        <p className="CommentDate">{commentDate}</p>
+        <p className="CommentDate">{commentDate.slice(0,24)}</p>
         <div className="CommentButtons">            
 
                 <button onClick={() => likeCommentAction(comment.id)}>Like</button>

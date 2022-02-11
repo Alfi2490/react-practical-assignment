@@ -59,7 +59,7 @@ export default function Post(props) {
 
         <h1 className="PostTitle">{post.title}</h1>
         <img className="PostImage" src={post.imageSrc} alt="post" /> 
-        <p className="PostDate">{dateFinal}</p>
+        <p className="PostDate">{dateFinal.slice(0,24)}</p>
         <h2 className="PostUserName">{post.username}</h2>
 
         <div className="LikeGroupe">

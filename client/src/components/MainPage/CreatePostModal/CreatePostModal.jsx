@@ -67,7 +67,7 @@ export default function CreatePostModal() {
           <input className='FormFileInput' type="file" name="pictute" id="picture"/>
           <div className='buttonGroupe'>
             <button type='submit' >{mode === 'Edit' ? 'Edit' : 'Add'}</button>
-            <button onClick={() => {
+            <button className='Cansel' onClick={() => {
                 dispatch(setTitle(''));
                 dispatch(setModalWindow('None'));
                 dispatch(setMode('Add'));

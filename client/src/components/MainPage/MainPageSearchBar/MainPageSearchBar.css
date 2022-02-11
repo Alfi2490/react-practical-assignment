@@ -4,6 +4,8 @@
 }
 
 .MainPageSearchBarInput{
+    width: 80%;
+    margin: 0 auto;
     height: 18px;
     padding: 8px;
     border: 2px solid rgb(3, 3, 163);
